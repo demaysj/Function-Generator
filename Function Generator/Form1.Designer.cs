@@ -38,30 +38,32 @@
             this.lblMulti = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rbSine = new System.Windows.Forms.RadioButton();
-            this.rbSquare = new System.Windows.Forms.RadioButton();
+            this.rbTtl = new System.Windows.Forms.RadioButton();
+            this.rbTri = new System.Windows.Forms.RadioButton();
             this.rbSaw = new System.Windows.Forms.RadioButton();
-            this.tbTri = new System.Windows.Forms.RadioButton();
-            this.tbTtl = new System.Windows.Forms.RadioButton();
+            this.rbSquare = new System.Windows.Forms.RadioButton();
+            this.rbSine = new System.Windows.Forms.RadioButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblDuty = new System.Windows.Forms.Label();
+            this.lblAmp = new System.Windows.Forms.Label();
+            this.lblOff = new System.Windows.Forms.Label();
+            this.nudDuty = new System.Windows.Forms.NumericUpDown();
             this.nudOff = new System.Windows.Forms.NumericUpDown();
             this.nudAmp = new System.Windows.Forms.NumericUpDown();
-            this.nudDuty = new System.Windows.Forms.NumericUpDown();
-            this.lblOff = new System.Windows.Forms.Label();
-            this.lblAmp = new System.Windows.Forms.Label();
-            this.lblDuty = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblAct = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.cbOnOff = new System.Windows.Forms.CheckBox();
+            this.cboDev = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDuty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDuty)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
@@ -131,8 +133,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.tbTtl);
-            this.tabPage1.Controls.Add(this.tbTri);
+            this.tabPage1.Controls.Add(this.rbTtl);
+            this.tabPage1.Controls.Add(this.rbTri);
             this.tabPage1.Controls.Add(this.rbSaw);
             this.tabPage1.Controls.Add(this.rbSquare);
             this.tabPage1.Controls.Add(this.rbSine);
@@ -144,43 +146,27 @@
             this.tabPage1.Text = "Wave Type";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // rbTtl
             // 
-            this.tabPage2.Controls.Add(this.lblDuty);
-            this.tabPage2.Controls.Add(this.lblAmp);
-            this.tabPage2.Controls.Add(this.lblOff);
-            this.tabPage2.Controls.Add(this.nudDuty);
-            this.tabPage2.Controls.Add(this.nudAmp);
-            this.tabPage2.Controls.Add(this.nudOff);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(220, 136);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Wave Parameters";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.rbTtl.AutoSize = true;
+            this.rbTtl.Location = new System.Drawing.Point(8, 98);
+            this.rbTtl.Name = "rbTtl";
+            this.rbTtl.Size = new System.Drawing.Size(45, 17);
+            this.rbTtl.TabIndex = 0;
+            this.rbTtl.TabStop = true;
+            this.rbTtl.Text = "TTL";
+            this.rbTtl.UseVisualStyleBackColor = true;
             // 
-            // rbSine
+            // rbTri
             // 
-            this.rbSine.AutoSize = true;
-            this.rbSine.Location = new System.Drawing.Point(8, 6);
-            this.rbSine.Name = "rbSine";
-            this.rbSine.Size = new System.Drawing.Size(46, 17);
-            this.rbSine.TabIndex = 0;
-            this.rbSine.TabStop = true;
-            this.rbSine.Text = "Sine";
-            this.rbSine.UseVisualStyleBackColor = true;
-            // 
-            // rbSquare
-            // 
-            this.rbSquare.AutoSize = true;
-            this.rbSquare.Location = new System.Drawing.Point(8, 29);
-            this.rbSquare.Name = "rbSquare";
-            this.rbSquare.Size = new System.Drawing.Size(59, 17);
-            this.rbSquare.TabIndex = 0;
-            this.rbSquare.TabStop = true;
-            this.rbSquare.Text = "Square";
-            this.rbSquare.UseVisualStyleBackColor = true;
+            this.rbTri.AutoSize = true;
+            this.rbTri.Location = new System.Drawing.Point(8, 75);
+            this.rbTri.Name = "rbTri";
+            this.rbTri.Size = new System.Drawing.Size(63, 17);
+            this.rbTri.TabIndex = 0;
+            this.rbTri.TabStop = true;
+            this.rbTri.Text = "Triangle";
+            this.rbTri.UseVisualStyleBackColor = true;
             // 
             // rbSaw
             // 
@@ -193,57 +179,52 @@
             this.rbSaw.Text = "Sawtooth";
             this.rbSaw.UseVisualStyleBackColor = true;
             // 
-            // tbTri
+            // rbSquare
             // 
-            this.tbTri.AutoSize = true;
-            this.tbTri.Location = new System.Drawing.Point(8, 75);
-            this.tbTri.Name = "tbTri";
-            this.tbTri.Size = new System.Drawing.Size(63, 17);
-            this.tbTri.TabIndex = 0;
-            this.tbTri.TabStop = true;
-            this.tbTri.Text = "Triangle";
-            this.tbTri.UseVisualStyleBackColor = true;
+            this.rbSquare.AutoSize = true;
+            this.rbSquare.Location = new System.Drawing.Point(8, 29);
+            this.rbSquare.Name = "rbSquare";
+            this.rbSquare.Size = new System.Drawing.Size(59, 17);
+            this.rbSquare.TabIndex = 0;
+            this.rbSquare.TabStop = true;
+            this.rbSquare.Text = "Square";
+            this.rbSquare.UseVisualStyleBackColor = true;
             // 
-            // tbTtl
+            // rbSine
             // 
-            this.tbTtl.AutoSize = true;
-            this.tbTtl.Location = new System.Drawing.Point(8, 98);
-            this.tbTtl.Name = "tbTtl";
-            this.tbTtl.Size = new System.Drawing.Size(45, 17);
-            this.tbTtl.TabIndex = 0;
-            this.tbTtl.TabStop = true;
-            this.tbTtl.Text = "TTL";
-            this.tbTtl.UseVisualStyleBackColor = true;
+            this.rbSine.AutoSize = true;
+            this.rbSine.Location = new System.Drawing.Point(8, 6);
+            this.rbSine.Name = "rbSine";
+            this.rbSine.Size = new System.Drawing.Size(46, 17);
+            this.rbSine.TabIndex = 0;
+            this.rbSine.TabStop = true;
+            this.rbSine.Text = "Sine";
+            this.rbSine.UseVisualStyleBackColor = true;
             // 
-            // nudOff
+            // tabPage2
             // 
-            this.nudOff.Location = new System.Drawing.Point(98, 12);
-            this.nudOff.Name = "nudOff";
-            this.nudOff.Size = new System.Drawing.Size(91, 20);
-            this.nudOff.TabIndex = 0;
+            this.tabPage2.Controls.Add(this.lblDuty);
+            this.tabPage2.Controls.Add(this.lblAmp);
+            this.tabPage2.Controls.Add(this.lblOff);
+            this.tabPage2.Controls.Add(this.nudDuty);
+            this.tabPage2.Controls.Add(this.nudOff);
+            this.tabPage2.Controls.Add(this.nudAmp);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(220, 136);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Wave Parameters";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // nudAmp
+            // lblDuty
             // 
-            this.nudAmp.Location = new System.Drawing.Point(98, 38);
-            this.nudAmp.Name = "nudAmp";
-            this.nudAmp.Size = new System.Drawing.Size(91, 20);
-            this.nudAmp.TabIndex = 0;
-            // 
-            // nudDuty
-            // 
-            this.nudDuty.Location = new System.Drawing.Point(98, 64);
-            this.nudDuty.Name = "nudDuty";
-            this.nudDuty.Size = new System.Drawing.Size(91, 20);
-            this.nudDuty.TabIndex = 0;
-            // 
-            // lblOff
-            // 
-            this.lblOff.AutoSize = true;
-            this.lblOff.Location = new System.Drawing.Point(13, 42);
-            this.lblOff.Name = "lblOff";
-            this.lblOff.Size = new System.Drawing.Size(69, 13);
-            this.lblOff.TabIndex = 1;
-            this.lblOff.Text = "DC Offset (V)";
+            this.lblDuty.AutoSize = true;
+            this.lblDuty.Location = new System.Drawing.Point(13, 66);
+            this.lblDuty.Name = "lblDuty";
+            this.lblDuty.Size = new System.Drawing.Size(75, 13);
+            this.lblDuty.TabIndex = 1;
+            this.lblDuty.Text = "Duty Cycle (%)";
             // 
             // lblAmp
             // 
@@ -254,14 +235,35 @@
             this.lblAmp.TabIndex = 1;
             this.lblAmp.Text = "Amplitude";
             // 
-            // lblDuty
+            // lblOff
             // 
-            this.lblDuty.AutoSize = true;
-            this.lblDuty.Location = new System.Drawing.Point(13, 66);
-            this.lblDuty.Name = "lblDuty";
-            this.lblDuty.Size = new System.Drawing.Size(58, 13);
-            this.lblDuty.TabIndex = 1;
-            this.lblDuty.Text = "Duty Cycle";
+            this.lblOff.AutoSize = true;
+            this.lblOff.Location = new System.Drawing.Point(13, 42);
+            this.lblOff.Name = "lblOff";
+            this.lblOff.Size = new System.Drawing.Size(69, 13);
+            this.lblOff.TabIndex = 1;
+            this.lblOff.Text = "DC Offset (V)";
+            // 
+            // nudDuty
+            // 
+            this.nudDuty.Location = new System.Drawing.Point(98, 64);
+            this.nudDuty.Name = "nudDuty";
+            this.nudDuty.Size = new System.Drawing.Size(91, 20);
+            this.nudDuty.TabIndex = 0;
+            // 
+            // nudOff
+            // 
+            this.nudOff.Location = new System.Drawing.Point(98, 38);
+            this.nudOff.Name = "nudOff";
+            this.nudOff.Size = new System.Drawing.Size(91, 20);
+            this.nudOff.TabIndex = 0;
+            // 
+            // nudAmp
+            // 
+            this.nudAmp.Location = new System.Drawing.Point(98, 12);
+            this.nudAmp.Name = "nudAmp";
+            this.nudAmp.Size = new System.Drawing.Size(91, 20);
+            this.nudAmp.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -281,14 +283,6 @@
             this.lblAct.TabIndex = 7;
             this.lblAct.Text = "Actual Frequency (Hz):";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(32, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 65);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnQuit
             // 
             this.btnQuit.Location = new System.Drawing.Point(154, 336);
@@ -297,14 +291,49 @@
             this.btnQuit.TabIndex = 8;
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // cbOnOff
+            // 
+            this.cbOnOff.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbOnOff.BackColor = System.Drawing.Color.Red;
+            this.cbOnOff.Checked = true;
+            this.cbOnOff.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOnOff.Location = new System.Drawing.Point(45, 336);
+            this.cbOnOff.Name = "cbOnOff";
+            this.cbOnOff.Size = new System.Drawing.Size(100, 65);
+            this.cbOnOff.TabIndex = 9;
+            this.cbOnOff.Text = "Off";
+            this.cbOnOff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbOnOff.UseVisualStyleBackColor = false;
+            this.cbOnOff.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // cboDev
+            // 
+            this.cboDev.FormattingEnabled = true;
+            this.cboDev.Location = new System.Drawing.Point(467, 380);
+            this.cboDev.Name = "cboDev";
+            this.cboDev.Size = new System.Drawing.Size(229, 21);
+            this.cboDev.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(376, 383);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Device/Channel:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboDev);
+            this.Controls.Add(this.cbOnOff);
             this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblAct);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tabControl1);
@@ -315,6 +344,8 @@
             this.Controls.Add(this.chart1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -322,9 +353,9 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDuty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDuty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,8 +370,8 @@
         private System.Windows.Forms.Label lblMulti;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.RadioButton tbTtl;
-        private System.Windows.Forms.RadioButton tbTri;
+        private System.Windows.Forms.RadioButton rbTtl;
+        private System.Windows.Forms.RadioButton rbTri;
         private System.Windows.Forms.RadioButton rbSaw;
         private System.Windows.Forms.RadioButton rbSquare;
         private System.Windows.Forms.RadioButton rbSine;
@@ -349,12 +380,14 @@
         private System.Windows.Forms.Label lblAmp;
         private System.Windows.Forms.Label lblOff;
         private System.Windows.Forms.NumericUpDown nudDuty;
-        private System.Windows.Forms.NumericUpDown nudAmp;
         private System.Windows.Forms.NumericUpDown nudOff;
+        private System.Windows.Forms.NumericUpDown nudAmp;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblAct;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.CheckBox cbOnOff;
+        private System.Windows.Forms.ComboBox cboDev;
+        private System.Windows.Forms.Label label1;
     }
 }
 
