@@ -31,9 +31,11 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.nudFreq = new System.Windows.Forms.NumericUpDown();
+            this.cboMult = new System.Windows.Forms.ComboBox();
             this.lblFreq = new System.Windows.Forms.Label();
             this.lblMulti = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -57,7 +59,7 @@
             this.cboDev = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFreq)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -81,27 +83,38 @@
             this.chart1.Size = new System.Drawing.Size(454, 300);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            title1.Name = "Title1";
+            title1.Text = "Volts (V)";
+            title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title2.Name = "Title2";
+            title2.Text = "Points";
+            this.chart1.Titles.Add(title1);
+            this.chart1.Titles.Add(title2);
             // 
-            // numericUpDown1
+            // nudFreq
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(53, 241);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(80, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.nudFreq.DecimalPlaces = 1;
+            this.nudFreq.Location = new System.Drawing.Point(53, 241);
+            this.nudFreq.Name = "nudFreq";
+            this.nudFreq.Size = new System.Drawing.Size(80, 20);
+            this.nudFreq.TabIndex = 1;
+            this.nudFreq.ValueChanged += new System.EventHandler(this.nudFreq_ValueChanged);
             // 
-            // comboBox1
+            // cboMult
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboMult.FormattingEnabled = true;
+            this.cboMult.Items.AddRange(new object[] {
             "x1 Hz",
             "x10 Hz",
             "x100 Hz",
             "x1k Hz",
             "x10k Hz"});
-            this.comboBox1.Location = new System.Drawing.Point(139, 241);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(112, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cboMult.Location = new System.Drawing.Point(139, 241);
+            this.cboMult.Name = "cboMult";
+            this.cboMult.Size = new System.Drawing.Size(112, 21);
+            this.cboMult.TabIndex = 2;
+            this.cboMult.SelectedIndexChanged += new System.EventHandler(this.cboMult_SelectedIndexChanged);
             // 
             // lblFreq
             // 
@@ -156,6 +169,7 @@
             this.rbTtl.TabStop = true;
             this.rbTtl.Text = "TTL";
             this.rbTtl.UseVisualStyleBackColor = true;
+            this.rbTtl.CheckedChanged += new System.EventHandler(this.rbTtl_CheckedChanged);
             // 
             // rbTri
             // 
@@ -167,6 +181,7 @@
             this.rbTri.TabStop = true;
             this.rbTri.Text = "Triangle";
             this.rbTri.UseVisualStyleBackColor = true;
+            this.rbTri.CheckedChanged += new System.EventHandler(this.rbTri_CheckedChanged);
             // 
             // rbSaw
             // 
@@ -178,6 +193,7 @@
             this.rbSaw.TabStop = true;
             this.rbSaw.Text = "Sawtooth";
             this.rbSaw.UseVisualStyleBackColor = true;
+            this.rbSaw.CheckedChanged += new System.EventHandler(this.rbSaw_CheckedChanged);
             // 
             // rbSquare
             // 
@@ -189,6 +205,7 @@
             this.rbSquare.TabStop = true;
             this.rbSquare.Text = "Square";
             this.rbSquare.UseVisualStyleBackColor = true;
+            this.rbSquare.CheckedChanged += new System.EventHandler(this.rbSquare_CheckedChanged);
             // 
             // rbSine
             // 
@@ -200,6 +217,7 @@
             this.rbSine.TabStop = true;
             this.rbSine.Text = "Sine";
             this.rbSine.UseVisualStyleBackColor = true;
+            this.rbSine.CheckedChanged += new System.EventHandler(this.rbSine_CheckedChanged);
             // 
             // tabPage2
             // 
@@ -250,6 +268,7 @@
             this.nudDuty.Name = "nudDuty";
             this.nudDuty.Size = new System.Drawing.Size(91, 20);
             this.nudDuty.TabIndex = 0;
+            this.nudDuty.ValueChanged += new System.EventHandler(this.nudDuty_ValueChanged);
             // 
             // nudOff
             // 
@@ -257,6 +276,7 @@
             this.nudOff.Name = "nudOff";
             this.nudOff.Size = new System.Drawing.Size(91, 20);
             this.nudOff.TabIndex = 0;
+            this.nudOff.ValueChanged += new System.EventHandler(this.nudOff_ValueChanged);
             // 
             // nudAmp
             // 
@@ -264,6 +284,7 @@
             this.nudAmp.Name = "nudAmp";
             this.nudAmp.Size = new System.Drawing.Size(91, 20);
             this.nudAmp.TabIndex = 0;
+            this.nudAmp.ValueChanged += new System.EventHandler(this.nudAmp_ValueChanged);
             // 
             // textBox1
             // 
@@ -306,7 +327,7 @@
             this.cbOnOff.Text = "Off";
             this.cbOnOff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbOnOff.UseVisualStyleBackColor = false;
-            this.cbOnOff.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbOnOff.CheckedChanged += new System.EventHandler(this.cbOnOff_CheckedChanged);
             // 
             // cboDev
             // 
@@ -339,15 +360,15 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblMulti);
             this.Controls.Add(this.lblFreq);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.cboMult);
+            this.Controls.Add(this.nudFreq);
             this.Controls.Add(this.chart1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFreq)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -364,8 +385,8 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown nudFreq;
+        private System.Windows.Forms.ComboBox cboMult;
         private System.Windows.Forms.Label lblFreq;
         private System.Windows.Forms.Label lblMulti;
         private System.Windows.Forms.TabControl tabControl1;
